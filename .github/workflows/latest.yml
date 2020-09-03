@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build image
-        run: docker build project-piper-action-runtime --file Dockerfile --tag $IMAGE_NAME
+        run: docker build project-piper-action-runtime --tag $IMAGE_NAME
 
       - name: Log into GitHub Container Registry
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
